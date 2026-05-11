@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ervanthe Daniel — Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1e2a3a',
+            navydark: '#1a2332',
+            orange: '#f97316',
+            orangehover: '#ea6007',
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="custom.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-navy h-[60px] flex items-center" id="navbar">
+    <div class="max-w-5xl mx-auto px-8 w-full flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-white font-semibold text-[0.95rem]">
+        <span class="w-[30px] h-[30px] bg-orange text-black rounded-md flex items-center justify-center font-extrabold text-sm">E</span>
+        <span>Ervanthe Daniel</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-1" id="navLinks">
+        <li><a href="index.html" class="px-4 py-1.5 rounded-full text-slate-300 hover:text-white text-sm font-medium transition-colors">Home</a></li>
+        <li><a href="hobby.html" class="px-4 py-1.5 rounded-full text-slate-300 hover:text-white text-sm font-medium transition-colors">Hobby</a></li>
+        <li><a href="gallery.html" class="px-4 py-1.5 rounded-full text-white bg-orange text-sm font-semibold">Gallery</a></li>
+      </ul>
+      <button class="md:hidden flex flex-col gap-[5px] p-1 bg-transparent border-none cursor-pointer" id="hamburger" aria-label="Toggle menu">
+        <span class="block w-[22px] h-[2px] bg-white rounded transition-all duration-300"></span>
+        <span class="block w-[22px] h-[2px] bg-white rounded transition-all duration-300"></span>
+        <span class="block w-[22px] h-[2px] bg-white rounded transition-all duration-300"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="hidden fixed top-[60px] left-0 right-0 bg-navy z-40 border-t border-white/10 px-4 py-3 mobile-menu" id="mobileMenu">
+    <ul class="flex flex-col gap-1">
+      <li><a href="index.html" class="block px-4 py-2.5 text-slate-300 hover:text-white text-sm rounded-lg transition-colors">Home</a></li>
+      <li><a href="hobby.html" class="block px-4 py-2.5 text-slate-300 hover:text-white text-sm rounded-lg transition-colors">Hobby</a></li>
+      <li><a href="gallery.html" class="block px-4 py-2.5 text-orange text-sm font-medium rounded-lg">Gallery</a></li>
+    </ul>
+  </div>
+
+  <!-- GALLERY HEADER: dark navy -->
+  <section class="bg-navy mt-[60px] py-16 text-center px-8">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Hangout Gallery</h1>
+    <p class="text-slate-400 text-sm leading-relaxed max-w-md mx-auto">
+      A curated collection of luxury and sports cars that inspire my design<br class="hidden md:block">
+      work. Click on any image to view it in full size.
+    </p>
+  </section>
+
+  <!-- GALLERY GRID: light gray bg, 2-col masonry -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-3xl mx-auto px-8">
+      <div class="gallery-masonry" id="galleryGrid">
+
+        <div class="gallery-item cursor-pointer rounded-xl overflow-hidden"
+             data-src="image copy 6.png"
+             data-caption="Friends at event">
+          <img src="image copy 6.png"
+               alt="Friends at event" class="w-full h-auto block transition-transform duration-300 hover:scale-105" />
+        </div>
+
+        <div class="gallery-item cursor-pointer rounded-xl overflow-hidden"
+             data-src="image copy 7.png"
+             data-caption="Street photography">
+          <img src="image copy 7.png"
+               alt="Street photography" class="w-full h-auto block transition-transform duration-300 hover:scale-105" />
+        </div>
+
+        <div class="gallery-item cursor-pointer rounded-xl overflow-hidden"
+             data-src="image copy 2.png"
+             data-caption="Group photo">
+          <img src="image copy 2.png"
+               alt="Group photo" class="w-full h-auto block transition-transform duration-300 hover:scale-105" />
+        </div>
+
+        <div class="gallery-item cursor-pointer rounded-xl overflow-hidden"
+             data-src="image copy 3.png"
+             data-caption="Scenic view">
+          <img src="image copy 3.png"
+               alt="Scenic view" class="w-full h-auto block transition-transform duration-300 hover:scale-105" />
+        </div>
+
+        <div class="gallery-item cursor-pointer rounded-xl overflow-hidden"
+             data-src="image copy 4.png"
+             data-caption="Weekend vibes">
+          <img src="image copy 4.png"
+               alt="Weekend vibes" class="w-full h-auto block transition-transform duration-300 hover:scale-105" />
+        </div>
+
+        <div class="gallery-item cursor-pointer rounded-xl overflow-hidden"
+             data-src="image copy 5.png"
+             data-caption="Dinner with friends">
+          <img src="image copy 5.png"
+               alt="Dinner with friends" class="w-full h-auto block transition-transform duration-300 hover:scale-105" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox fixed inset-0 z-[2000] items-center justify-center" id="lightbox">
+    <div class="absolute inset-0 bg-black/92" id="lightboxBackdrop"></div>
+    <button class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/15 hover:bg-orange text-white flex items-center justify-center text-base transition-colors" id="lbClose">✕</button>
+    <button class="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/15 hover:bg-orange text-white flex items-center justify-center text-2xl transition-colors" id="lbPrev">‹</button>
+    <button class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/15 hover:bg-orange text-white flex items-center justify-center text-2xl transition-colors" id="lbNext">›</button>
+    <div class="relative z-10 max-w-[88vw] max-h-[82vh] text-center">
+      <img src="" alt="" id="lbImg" class="max-w-[88vw] max-h-[72vh] w-auto h-auto object-contain rounded-xl inline-block" />
+      <p class="text-slate-400 text-xs mt-3" id="lbCaption"></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-navydark pt-12">
+    <div class="max-w-5xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-10 pb-10">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-[30px] h-[30px] bg-orange text-black rounded-md flex items-center justify-center font-extrabold text-sm">E</span>
+          <span class="text-white font-bold text-sm">Ervanthe Daniel Layskie</span>
+        </div>
+        <p class="text-slate-500 text-xs leading-relaxed max-w-[240px]">Computer Science student at Universitas Ciputra who enjoys luxury cars and hanging out with friends around Surabaya.</p>
+      </div>
+      <div>
+        <h4 class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-slate-500 hover:text-orange text-xs transition-colors">Home</a></li>
+          <li><a href="hobby.html" class="text-slate-500 hover:text-orange text-xs transition-colors">Hobby</a></li>
+          <li><a href="gallery.html" class="text-slate-500 hover:text-orange text-xs transition-colors">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Contact</h4>
+        <ul class="space-y-2">
+          <li class="text-slate-500 text-xs">ervanthedaniel@gmail.com</li>
+          <li class="text-slate-500 text-xs">+62 81234567890</li>
+          <li class="text-slate-500 text-xs">Surabaya, Indonesia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 text-center py-4">
+      <p class="text-slate-600 text-xs">© 2026 Ervanthe Daniel Layskie. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

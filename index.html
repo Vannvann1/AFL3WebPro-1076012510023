@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ervanthe Daniel — Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1e2a3a',
+            navydark: '#1a2332',
+            orange: '#f97316',
+            orangehover: '#ea6007',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="custom.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body class="font-sans bg-white text-gray-900">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-navy h-[60px] flex items-center" id="navbar">
+    <div class="max-w-5xl mx-auto px-8 w-full flex items-center justify-between">
+      <!-- Brand -->
+      <a href="index.html" class="flex items-center gap-2 text-white font-semibold text-[0.95rem]">
+        <span class="w-[30px] h-[30px] bg-orange text-black rounded-md flex items-center justify-center font-extrabold text-sm">E</span>
+        <span>Ervanthe Daniel</span>
+      </a>
+      <!-- Desktop Links -->
+      <ul class="hidden md:flex items-center gap-1" id="navLinks">
+        <li><a href="index.html" class="px-4 py-1.5 rounded-full text-white bg-orange text-sm font-semibold">Home</a></li>
+        <li><a href="hobby.html" class="px-4 py-1.5 rounded-full text-slate-300 hover:text-white text-sm font-medium transition-colors">Hobby</a></li>
+        <li><a href="gallery.html" class="px-4 py-1.5 rounded-full text-slate-300 hover:text-white text-sm font-medium transition-colors">Gallery</a></li>
+      </ul>
+      <!-- Hamburger -->
+      <button class="md:hidden flex flex-col gap-[5px] p-1 bg-transparent border-none cursor-pointer" id="hamburger" aria-label="Toggle menu">
+        <span class="block w-[22px] h-[2px] bg-white rounded transition-all duration-300"></span>
+        <span class="block w-[22px] h-[2px] bg-white rounded transition-all duration-300"></span>
+        <span class="block w-[22px] h-[2px] bg-white rounded transition-all duration-300"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="hidden fixed top-[60px] left-0 right-0 bg-navy z-40 border-t border-white/10 px-4 py-3 mobile-menu" id="mobileMenu">
+    <ul class="flex flex-col gap-1">
+      <li><a href="index.html" class="block px-4 py-2.5 text-orange text-sm font-medium rounded-lg">Home</a></li>
+      <li><a href="hobby.html" class="block px-4 py-2.5 text-slate-300 hover:text-white text-sm font-medium rounded-lg transition-colors">Hobby</a></li>
+      <li><a href="gallery.html" class="block px-4 py-2.5 text-slate-300 hover:text-white text-sm font-medium rounded-lg transition-colors">Gallery</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="bg-navy pt-[60px] min-h-[420px] flex items-center">
+    <div class="max-w-5xl mx-auto px-8 py-16 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Text -->
+      <div>
+        <span class="inline-block bg-orange/20 text-orange text-xs font-semibold px-4 py-1 rounded-full border border-orange/30 mb-5">
+          Ervanthe Daniel Layskie
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+          Coding by Day,<br>
+          <span class="text-orange">Exploring by Night</span>
+        </h1>
+        <p class="text-slate-400 text-sm leading-relaxed mb-7 max-w-md">
+          Hi! I'm Ervanthe Daniel Layskie, a Computer Science student at Universitas Ciputra. I enjoy watching luxury cars, hanging out with friends, and exploring new places around Surabaya.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="gallery.html" class="inline-flex items-center gap-1.5 bg-orange hover:bg-orangehover text-white font-semibold text-sm px-6 py-2.5 rounded-lg transition-all hover:-translate-y-0.5">
+            View Gallery →
+          </a>
+          <a href="hobby.html" class="inline-flex items-center bg-transparent text-white font-medium text-sm px-6 py-2.5 rounded-lg border border-white/30 hover:border-white hover:bg-white/10 transition-all">
+            Read My Story
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <div class="hidden md:block rounded-xl overflow-hidden aspect-[4/3]">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80" alt="Landscape" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <section class="bg-white py-16">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-extrabold text-gray-900">About Me</h2>
+        <div class="w-10 h-0.5 bg-orange mx-auto mt-2 rounded"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <!-- Image -->
+        <div class="rounded-xl overflow-hidden aspect-[4/3] bg-gray-100">
+          <img src="image.png" alt="Cars" class="w-full h-full object-cover" />
+        </div>
+        <!-- Text -->
+        <div>
+          <p class="text-slate-500 text-sm leading-relaxed mb-3">
+            I got into luxury cars from my older brother (koko) who's always watching car videos. When I'm not coding or studying, you'll find me hanging out with friends, exploring cafes, trying new food spots, or just chilling around the city.
+          </p>
+          <p class="text-slate-500 text-sm leading-relaxed mb-8">
+            Life as a CS student at Universitas Ciputra is about balance. I love learning new technologies and building projects, but I also believe in enjoying the simple things, good conversations with friends, discovering cool places, and appreciating beautiful car designs online.
+          </p>
+          <!-- Stats -->
+          <div class="flex gap-8 pt-6 border-t border-gray-100">
+            <div>
+              <div class="text-3xl font-extrabold text-orange">10+</div>
+              <div class="text-xs text-slate-400 mt-1">Holiday with Friends</div>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold text-orange">30+</div>
+              <div class="text-xs text-slate-400 mt-1">Cars I Follow</div>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold text-orange">100+</div>
+              <div class="text-xs text-slate-400 mt-1">Weekend Hangouts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MY INTERESTS -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-5xl mx-auto px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-extrabold text-gray-900">My Interests</h2>
+        <div class="w-10 h-0.5 bg-orange mx-auto mt-2 rounded"></div>
+        <p class="text-slate-400 text-sm mt-2">Areas I explore and develop</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl p-7 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+          <div class="w-11 h-11 bg-orange/10 rounded-xl flex items-center justify-center text-2xl mb-4">🚗</div>
+          <h3 class="font-bold text-gray-900 text-sm mb-2">Luxury Cars</h3>
+          <p class="text-slate-500 text-xs leading-relaxed">I love looking at luxury and sports cars online, the designs, the colors, the way they look. Watching car videos with my brother is always fun.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl p-7 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+          <div class="w-11 h-11 bg-red-50 rounded-xl flex items-center justify-center text-2xl mb-4">❤️</div>
+          <h3 class="font-bold text-gray-900 text-sm mb-2">Hanging Out</h3>
+          <p class="text-slate-500 text-xs leading-relaxed">Nothing beats good times with friends. Exploring cafes, trying new restaurants, or just walking around the city, it's the simple moments that matter.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl p-7 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+          <div class="w-11 h-11 bg-violet-50 rounded-xl flex items-center justify-center text-2xl mb-4">💻</div>
+          <h3 class="font-bold text-gray-900 text-sm mb-2">Computer Science</h3>
+          <p class="text-slate-500 text-xs leading-relaxed">Studying CS at Universitas Ciputra, learning to code and build cool projects. Tech is fascinating, but I don't let it take over my social life!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LET'S CONNECT -->
+  <section class="bg-orange py-16 text-center px-8">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Let's Connect!</h2>
+    <p class="text-white/80 text-sm max-w-md mx-auto mb-7 leading-relaxed">
+      Always up for meeting new people, grabbing coffee, or just chatting about cars and tech. Let's hang out!
+    </p>
+    <a href="gallery.html" class="inline-flex items-center bg-white text-orange font-semibold text-sm px-7 py-2.5 rounded-lg hover:bg-orange-50 transition-all hover:-translate-y-0.5">
+      View My Collection →
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navydark pt-12">
+    <div class="max-w-5xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-10 pb-10">
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-[30px] h-[30px] bg-orange text-black rounded-md flex items-center justify-center font-extrabold text-sm">E</span>
+          <span class="text-white font-bold text-sm">Ervanthe Daniel Layskie</span>
+        </div>
+        <p class="text-slate-500 text-xs leading-relaxed max-w-[240px]">Computer Science student at Universitas Ciputra who enjoys luxury cars and hanging out with friends around Surabaya.</p>
+      </div>
+      <div>
+        <h4 class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-slate-500 hover:text-orange text-xs transition-colors">Home</a></li>
+          <li><a href="hobby.html" class="text-slate-500 hover:text-orange text-xs transition-colors">Hobby</a></li>
+          <li><a href="gallery.html" class="text-slate-500 hover:text-orange text-xs transition-colors">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Contact</h4>
+        <ul class="space-y-2">
+          <li class="text-slate-500 text-xs">ervanthedaniel@gmail.com</li>
+          <li class="text-slate-500 text-xs">+62 81234567890</li>
+          <li class="text-slate-500 text-xs">Surabaya, Indonesia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 text-center py-4">
+      <p class="text-slate-600 text-xs">© 2026 Ervanthe Daniel Layskie. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
